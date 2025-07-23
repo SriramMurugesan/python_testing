@@ -4,9 +4,9 @@ from db import Database
 @pytest.fixture
 def db():
     """Fixture to create a database"""
-    database=Database()
+    database = Database()
     yield database
-    database.data.clear()
+    database.users.clear()  # Changed from database.data to database.users
 
 
 def test_add_user(db):
